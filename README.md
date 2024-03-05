@@ -1,6 +1,6 @@
 # HealthTracker App
 
-The HealthTracker app is designed to interact with Apple's HealthKit to fetch and display the number of steps taken by the user today. It demonstrates how to request authorization from HealthKit, access step count data, and present this information within a SwiftUI-based iOS app.
+The HealthTracker app is designed to interact with Apple's HealthKit to fetch and display fitness data such as steps taken by the user today. It demonstrates how to request authorization from HealthKit, access step count data, and present this information within a SwiftUI-based iOS app. This goal of this app is to educate myself on this topic before moving on a bigger one.
 
 ## Features
 - Requests HealthKit authorization to access step data.
