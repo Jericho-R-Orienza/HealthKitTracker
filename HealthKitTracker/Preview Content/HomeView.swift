@@ -12,14 +12,13 @@ struct HomeView: View {
     var body: some View {
         VStack{
             LazyVGrid(columns: Array(repeating: GridItem(spacing: 20), count: 2)) {
-                WorkOutCard(workout: WorkOut(id: 0, title: "Daily Steps", subtitle: "Goal: 10,000", image: "figure.walk", amount: "8,548"))
-                WorkOutCard(workout: WorkOut(id: 0, title: "Daily Steps", subtitle: "Goal: 10,000", image: "figure.walk", amount: "8,548"))
+                ForEach(tracker.workouts.sorted(by: {$0.value.id < $1.value.id}), id: \.key){ item in
+                    WorkOutCard(workout: item.value)
+                }
             }
             .padding(.horizontal)
         }
-        .onAppear {
-            tracker.getTodaySteps()
-        }
+        //removed onAppear becasue we are instead calling it in HealthTracker when we init
     }
 }
 
