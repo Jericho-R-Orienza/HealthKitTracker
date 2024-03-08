@@ -12,6 +12,7 @@ struct WorkOut {
     let title: String
     let subtitle: String
     let image: String
+    let tintColor: Color
     let amount: String
 }
 
@@ -37,12 +38,16 @@ struct WorkOutCard: View {
                     
                     Spacer()
                     Image(systemName: workout.image)
-                        .foregroundColor(.green)
+                        .foregroundColor(workout.tintColor)
                 }
                 
                 .padding()
                 Text(workout.amount)
                     .font(.system(size: 24))
+                    .minimumScaleFactor(0.6)
+                    .bold()
+                    .padding()
+                
             }
             .padding()
         }
@@ -51,6 +56,6 @@ struct WorkOutCard: View {
 
 struct WorkOutCard_Previews: PreviewProvider {
     static var previews: some View{
-        WorkOutCard(workout: WorkOut(id: 0, title: "Daily Steps", subtitle: "Goal", image: "figure.walk", amount: "8,548"))
+        WorkOutCard(workout: WorkOut(id: 0, title: "Daily Steps", subtitle: "Goal", image: "figure.walk", tintColor: .green, amount: "8,548"))
     }
 }
